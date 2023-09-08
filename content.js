@@ -9,7 +9,9 @@ function fetchCaptions(videoId) {
   fetch(`http://localhost:5000/get_transcript?video_id=${videoId}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data); // This is the transcript
+      console.log("Transcript:", data.transcript);
+      console.log("Topic Timestamps:", data.topic_timestamps);
+      console.log(data.formatted_timestamps);
     })
     .catch((error) => {
       console.log("Error fetching captions:", error);
